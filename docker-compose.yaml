@@ -15,6 +15,9 @@
       build:
         context: .
         dockerfile: _docker/app/Dockerfile
+        args:
+            UID: ${UID:-1000}
+            GID: ${GID:-1000}
       volumes:
         - ./:/var/www
       depends_on:
